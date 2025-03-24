@@ -8,4 +8,8 @@ const fonts = {
   thin: 'Poppins-Thin',
 };
 
-export {fonts};
+const colors = {
+  primary: '#FB833F',
+};
+
+export {fonts, colors};
