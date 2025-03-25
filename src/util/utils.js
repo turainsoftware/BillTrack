@@ -10,6 +10,7 @@ const fonts = {
 
 const colors = {
   primary: '#FB833F',
+  backgroundColor: "#121212"
 };
 
 export {fonts, colors};
