@@ -1,9 +1,11 @@
 import {Animated, Easing, Image, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useRef} from 'react';
 import {DotLoader} from '../../components';
+import {StackActions, useNavigation} from '@react-navigation/native';
 
 const SplashScreen = () => {
   const scaleAnimation = useRef(new Animated.Value(0)).current;
+  const navigation = useNavigation();
 
   useEffect(() => {
     Animated.timing(scaleAnimation, {
@@ -11,6 +13,9 @@ const SplashScreen = () => {
       duration: 1000,
       useNativeDriver: true,
     }).start();
+    setTimeout(() => {
+      navigation.dispatch(StackActions.replace('Onboarding'));
+    }, 3000);
   }, []);
 
   return (

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { View, Animated, StyleSheet } from 'react-native';
-import { colors } from '../../util/utils';
+import React, {useEffect, useRef} from 'react';
+import {View, Animated, StyleSheet} from 'react-native';
+import {colors} from '../../util/utils';
 
 const DotLoader = () => {
   const scales = [
@@ -10,11 +10,12 @@ const DotLoader = () => {
     useRef(new Animated.Value(1)).current,
   ];
 
+
   useEffect(() => {
     const animations = scales.map((scale, index) =>
       Animated.sequence([
         Animated.timing(scale, {
-          toValue: 1.3,
+          toValue: 1.4,
           duration: 300,
           useNativeDriver: true,
         }),
@@ -23,7 +24,7 @@ const DotLoader = () => {
           duration: 300,
           useNativeDriver: true,
         }),
-      ])
+      ]),
     );
 
     Animated.loop(Animated.stagger(300, animations)).start();
@@ -34,7 +35,7 @@ const DotLoader = () => {
       {scales.map((scale, index) => (
         <Animated.View
           key={index}
-          style={[styles.circle, { transform: [{ scale }] }]}
+          style={[styles.circle, {transform: [{scale}]}]}
         />
       ))}
     </View>
