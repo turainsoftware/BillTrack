@@ -10,8 +10,13 @@ const fonts = {
 
 const colors = {
   primary: '#FB833F',
-  backgroundColor: "#121212",
-  textSlate: '#4D4D4D'
+  secondary: '#EA6B23',
+  backgroundColor: '#121212',
+  textSlate: '#4D4D4D',
+  border: '#AAAAAA',
 };
 
-export {fonts, colors};
+// Validations
+const verifyMobile = number => /^[6-9]\d{9}$/.test(number);
+
+export {fonts, colors, verifyMobile};

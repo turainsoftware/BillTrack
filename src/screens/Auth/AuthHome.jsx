@@ -10,8 +10,10 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {colors, fonts} from '../../util/utils';
 import AuthLayout from './AuthLayout';
+import {useNavigation} from '@react-navigation/native';
 
 const AuthHome = () => {
+  const navigation = useNavigation();
   return (
     <AuthLayout>
       <View style={styles.headerContainer}>
@@ -28,7 +30,8 @@ const AuthHome = () => {
         </View>
         <View style={styles.footer}>
           <TouchableOpacity
-            style={[styles.btn, {backgroundColor: colors.primary}]}>
+            style={[styles.btn, {backgroundColor: colors.primary}]}
+            onPress={() => navigation.navigate('Login')}>
             <Text
               style={[
                 styles.btnText,
