@@ -10,7 +10,8 @@ const fonts = {
 
 const colors = {
   primary: '#FB833F',
-  backgroundColor: "#121212"
+  backgroundColor: "#121212",
+  textSlate: '#4D4D4D'
 };
 
 export {fonts, colors};

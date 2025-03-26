@@ -9,7 +9,7 @@ const App = () => {
   const AuthStack = () => {
     return (
       <Stack.Navigator
-        initialRouteName="Splash"
+        initialRouteName="AuthHome"
         screenOptions={{headerShown: false, animation: 'slide_from_right'}}>
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Onboarding" component={Onboarding} />

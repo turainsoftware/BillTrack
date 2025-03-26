@@ -84,6 +84,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        // Enable GIF animation on Android
+        vectorDrawables.useSupportLibrary = true
     }
     signingConfigs {
         debug {
@@ -110,6 +112,8 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    // For enable the gif images
+    implementation 'com.facebook.fresco:fresco:2.6.0' // Base Fresco library
     implementation 'com.facebook.fresco:animated-gif:2.6.0'
     implementation 'com.facebook.fresco:animated-webp:2.0.0'
     implementation 'com.facebook.fresco:webpsupport:2.0.0'

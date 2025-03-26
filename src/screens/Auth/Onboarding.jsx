@@ -14,20 +14,22 @@ import React, {useRef, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {colors, fonts} from '../../util/utils';
 import {StackActions, useNavigation} from '@react-navigation/native';
+import LottieView from 'lottie-react-native';
+import AuthLayout from './AuthLayout';
 
 const {width} = Dimensions.get('screen');
 
 const PAGE_DETAILS = [
   {
     id: '1',
-    image: require('./../../../assets/images/onboarding1.gif'),
+    image: require('./../../../assets/images/onboarding1.json'),
     title: 'Welcome To BillTrack',
     isDesc: true,
     desc: 'Simplify your billing and payments. Track expenses, automate payments, and stay on top of your finances.',
   },
   {
     id: '2',
-    image: require('./../../../assets/images/onboarding2.gif'),
+    image: require('./../../../assets/images/onboarding2.json'),
     title: 'Smart Billing Tools',
     isDesc: false,
     contents: [
@@ -39,7 +41,7 @@ const PAGE_DETAILS = [
   },
   {
     id: '3',
-    image: require('./../../../assets/images/onboarding3.gif'),
+    image: require('./../../../assets/images/onboarding3.json'),
     title: 'Optimize Your Workflow',
     isDesc: false,
     contents: [
@@ -53,9 +55,15 @@ const PAGE_DETAILS = [
 const OnboardingItem = ({item}) => {
   return (
     <View style={styles.itemWrapper}>
-      <Image
+      {/* <Image
         source={item.image}
         resizeMode="cover"
+        style={styles.bannerImage}
+      /> */}
+      <LottieView
+        source={item.image}
+        autoPlay
+        loop
         style={styles.bannerImage}
       />
       <View style={styles.contentContainer}>
@@ -154,12 +162,11 @@ const Onboarding = () => {
   };
 
   return (
-    <ImageBackground
+    <AuthLayout
       source={require('./../../../assets/images/bg1.png')}
       resizeMode="cover"
       style={styles.background}>
-      <SafeAreaView style={styles.container}>
-        <StatusBar backgroundColor={'#ffffff'} barStyle="dark-content" />
+      
         <View style={styles.mainContainer}>
           <FlatList
             ref={flatListRef}
@@ -192,22 +199,11 @@ const Onboarding = () => {
             </TouchableOpacity>
           </View>
         </View>
-      </SafeAreaView>
-    </ImageBackground>
+    </AuthLayout>
   );
 };
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   mainContainer: {
     flex: 0.85,
     width: '100%',
