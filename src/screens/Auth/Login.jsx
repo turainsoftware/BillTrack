@@ -1,12 +1,12 @@
 import {
   Image,
   Keyboard,
+  KeyboardAvoidingView,
+  Platform,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  TouchableWithoutFeedback,
-  TouchableWithoutFeedbackBase,
   View,
 } from 'react-native';
 import React, {useState} from 'react';
@@ -16,10 +16,14 @@ import AuthLayout from './AuthLayout';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {colors, fonts, verifyMobile} from '../../util/utils';
+import {useNavigation} from '@react-navigation/native';
 
 const Login = () => {
+  // Global
+  const navigation = useNavigation();
+
   // State Validations
-  const [isValidMobile, setIsValidMobile] = useState(true);
+  const [isValidMobile, setIsValidMobile] = useState(false);
 
   // State Values
   const [mobileNumber, setMobileNumber] = useState('');
@@ -35,13 +39,18 @@ const Login = () => {
   };
 
   const handleOtp = () => {
+    if (isValidMobile) {
+      navigation.navigate('Otp', {
+        phone: mobileNumber,
+      });
+    }
     Keyboard.dismiss;
   };
 
   return (
-    <TouchableWithoutFeedback
-      onPress={() => Keyboard.dismiss}
-      accessible={false}>
+    <KeyboardAvoidingView
+      style={{flex: 1}}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <AuthLayout>
         <Image
           style={styles.logo}
@@ -99,7 +108,7 @@ const Login = () => {
           </View>
         </View>
       </AuthLayout>
-    </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 };
 

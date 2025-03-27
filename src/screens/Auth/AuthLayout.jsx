@@ -1,6 +1,11 @@
-import {ImageBackground, StatusBar, StyleSheet, View} from 'react-native';
+import {
+  ImageBackground,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  View,
+} from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 const AuthLayout = ({children}) => {
   return (

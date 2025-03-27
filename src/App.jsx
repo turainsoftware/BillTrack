@@ -1,7 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import {AuthHome, Home, Login, Onboarding, SplashScreen} from './screens';
+import {AuthHome, Home, Login, Onboarding, Otp, SplashScreen} from './screens';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -9,12 +9,13 @@ const App = () => {
   const AuthStack = () => {
     return (
       <Stack.Navigator
-        initialRouteName="Login"
+        initialRouteName="Splash"
         screenOptions={{headerShown: false, animation: 'slide_from_right'}}>
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Onboarding" component={Onboarding} />
         <Stack.Screen name="AuthHome" component={AuthHome} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Otp" component={Otp} />
       </Stack.Navigator>
     );
   };
