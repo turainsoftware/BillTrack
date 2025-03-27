@@ -61,7 +61,12 @@ const Otp = () => {
 
   const handleKeyPress = ({nativeEvent: {key}}, index) => {
     if (key === 'Backspace' && otp[index] === '' && index > 0) {
-      inputRef.current[index - 1].focus();
+      const newOtp = [...otp];
+      newOtp[index - 1] = '';
+      setOtp(newOtp);
+      setTimeout(() => {
+        inputRef.current[index - 1].focus();
+      }, 25);
     }
   };
 
@@ -101,7 +106,7 @@ const Otp = () => {
                     ref={ref => (inputRef.current[index] = ref)}
                     style={styles.otpInput}
                     selectionColor={colors.secondary}
-                    keyboardType="number-pad"
+                    keyboardType="phone-pad"
                     maxLength={1}
                     value={otp[index]}
                     onChangeText={text => handleChange(text, index)}
