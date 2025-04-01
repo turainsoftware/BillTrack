@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import HomeLayout from './HomeLayout'
 
 const CreateBill = () => {
   return (
-    <View>
+    <HomeLayout>
       <Text>CreateBill</Text>
-    </View>
+    </HomeLayout>
   )
 }
 

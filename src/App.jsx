@@ -197,7 +197,7 @@ const App = () => {
   };
 
   const AppNav = () => {
-    const isLogin = false;
+    const isLogin = true;
     return (
       <NavigationContainer>
         {isLogin ? <AppStack /> : <AuthStack />}

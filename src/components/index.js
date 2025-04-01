@@ -1,4 +1,7 @@
 // Loaders
 import DotLoader from './Loaders/DotLoader';
 
-export {DotLoader};
+//Headers
+import PrimaryHeader from './Headers/PrimaryHeader';
+
+export {DotLoader, PrimaryHeader};

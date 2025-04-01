@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import HomeLayout from './HomeLayout'
 
 const Service = () => {
   return (
-    <View>
+    <HomeLayout>
       <Text>Service</Text>
-    </View>
+    </HomeLayout>
   )
 }
 
