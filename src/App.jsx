@@ -50,7 +50,7 @@ const App = () => {
           animation: 'shift',
           headerShown: false,
           tabBarStyle: {
-            height: 70,
+            height: 80,
             justifyContent: 'center',
             alignItems: 'center',
           },
@@ -180,7 +180,7 @@ const App = () => {
             tabBarButton: props => (
               <Pressable
                 {...props}
-                android_ripple={{color: `${colors.primary}40`}} // Custom ripple color
+                android_ripple={{color: `${colors.primary}40`}}
                 style={{
                   justifyContent: 'center',
                   alignItems: 'center',
