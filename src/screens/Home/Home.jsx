@@ -1,11 +1,12 @@
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import HomeLayout from './HomeLayout';
 
 const Home = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Home</Text>
-    </SafeAreaView>
+    <HomeLayout>
+      <Text>Helloworld</Text>
+    </HomeLayout>
   );
 };
 

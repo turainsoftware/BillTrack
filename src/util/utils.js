@@ -14,6 +14,7 @@ const colors = {
   backgroundColor: '#121212',
   textSlate: '#4D4D4D',
   border: '#AAAAAA',
+  primaryBackground: '#f4f8fd'
 };
 
 // Validations
