@@ -1,20 +1,31 @@
 import {
   ImageBackground,
+  Platform,
   SafeAreaView,
   StatusBar,
   StyleSheet,
   View,
 } from 'react-native';
 import React from 'react';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const AuthLayout = ({children}) => {
+  const insets = useSafeAreaInsets();
   return (
     <ImageBackground
       source={require('./../../../assets/images/bg1.png')}
       resizeMode="cover"
-      style={styles.background}>
-      <StatusBar backgroundColor={'#ffffff'} barStyle="dark-content" />
-      <SafeAreaView style={styles.container}>
+      style={[
+        styles.background,
+        {paddingTop: Platform.OS === 'android' ? insets.top : 0},
+      ]}>
+      <SafeAreaView
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <StatusBar backgroundColor={'transparent'} barStyle="dark-content" />
         <View style={styles.ballContainer}>
           <View
             style={[
@@ -45,11 +56,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   ballContainer: {
     position: 'absolute',
