@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../util/utils';
 
@@ -7,7 +7,7 @@ const SalesTransaction = () => {
     <View style={styles.container}>
       <Text style={styles.titleText}>Sales Transactions</Text>
       <View style={styles.contentContainer}>
-        <View style={styles.iconContaienr}>
+        <TouchableOpacity style={styles.iconContaienr}>
           <Image
             style={styles.icon}
             source={require('./../../../assets/images/stsi.webp')}
@@ -16,8 +16,8 @@ const SalesTransaction = () => {
             <Text style={styles.text}>Sales</Text>
             <Text style={[styles.text, {marginTop: -5}]}>Invoice</Text>
           </View>
-        </View>
-        <View style={styles.iconContaienr}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.iconContaienr}>
           <Image
             style={styles.icon}
             source={require('./../../../assets/images/strp.webp')}
@@ -26,8 +26,8 @@ const SalesTransaction = () => {
             <Text style={styles.text}>Recive</Text>
             <Text style={[styles.text, {marginTop: -5}]}>Payments</Text>
           </View>
-        </View>
-        <View style={styles.iconContaienr}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.iconContaienr}>
           <Image
             style={styles.icon}
             source={require('./../../../assets/images/stsr.webp')}
@@ -36,8 +36,8 @@ const SalesTransaction = () => {
             <Text style={styles.text}>Sales</Text>
             <Text style={[styles.text, {marginTop: -5}]}>Return</Text>
           </View>
-        </View>
-        <View style={styles.iconContaienr}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.iconContaienr}>
           <Image
             style={styles.icon}
             source={require('./../../../assets/images/stcn.webp')}
@@ -46,7 +46,7 @@ const SalesTransaction = () => {
             <Text style={styles.text}>Credit</Text>
             <Text style={[styles.text, {marginTop: -5}]}>Note</Text>
           </View>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
