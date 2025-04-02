@@ -1,14 +1,24 @@
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import HomeLayout from './HomeLayout';
-import {DashboardSecond, PrimaryHeader, TodayRevenue} from '../../components';
+import {
+  DashboardSecond,
+  PrimaryHeader,
+  PurchaseTransactions,
+  SalesTransaction,
+  TodayRevenue,
+} from '../../components';
 
 const Home = () => {
   return (
     <HomeLayout>
       <PrimaryHeader />
       <ScrollView style={{flex: 1, paddingHorizontal: 20, paddingVertical: 10}}>
+        {/* Today's Revenue*/}
         <TodayRevenue />
+        {/* Today's Revenue*/}
+
+        {/* Second Card*/}
         <View style={styles.secondCardContainer}>
           <DashboardSecond
             value={129}
@@ -21,6 +31,15 @@ const Home = () => {
             icon={require('./../../../assets/images/user.webp')}
           />
         </View>
+        {/* Second Card*/}
+
+        {/* Sales Transaction */}
+        <SalesTransaction />
+        {/* Sales Transaction */}
+
+        {/* Purchase Transaction */}
+        <PurchaseTransactions />
+        {/* Purchase Transaction */}
       </ScrollView>
     </HomeLayout>
   );
