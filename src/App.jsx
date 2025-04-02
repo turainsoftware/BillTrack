@@ -118,10 +118,10 @@ const App = () => {
             tabBarIcon: ({color}) => (
               <View
                 style={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 50 / 2, // 50% of 60
-                  backgroundColor: '#FF6347',
+                  width: 60,
+                  height: 60,
+                  borderRadius: 60 / 2, // 50% of 60
+                  backgroundColor: '#FF0000',
                   justifyContent: 'center',
                   alignItems: 'center',
                   position: 'absolute',

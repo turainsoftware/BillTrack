@@ -10,7 +10,7 @@ const TodayRevenue = () => {
         source={require('./../../../assets/images/bg1.webp')}
       />
       <View style={styles.textContainer}>
-        <Text style={styles.moneyText}>5,12,589.00</Text>
+        <Text style={styles.moneyText}>5,12,15.00</Text>
         <Text style={styles.titleText}>Today’s Revenue</Text>
       </View>
       <Image
