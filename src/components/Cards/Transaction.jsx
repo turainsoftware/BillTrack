@@ -1,15 +1,17 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
+import React, {useRef} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {colors, fonts} from '../../util/utils';
 import TransactionCard from './TransactionCard';
 
-const Transaction = () => {
+const Transaction = ({handleCurentMonthOpen}) => {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
         <Text style={styles.titleText}>Transactions</Text>
-        <TouchableOpacity style={styles.topRightContainer}>
+        <TouchableOpacity
+          style={styles.topRightContainer}
+          onPress={handleCurentMonthOpen}>
           <AntDesign name="calendar" size={16} color="#007CFF" />
           <Text style={styles.rightText}>Current Month</Text>
         </TouchableOpacity>
