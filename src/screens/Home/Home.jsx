@@ -1,4 +1,4 @@
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import HomeLayout from './HomeLayout';
 import {
@@ -7,6 +7,7 @@ import {
   PurchaseTransactions,
   SalesTransaction,
   TodayRevenue,
+  Transaction,
 } from '../../components';
 
 const Home = () => {
@@ -40,6 +41,10 @@ const Home = () => {
         {/* Purchase Transaction */}
         <PurchaseTransactions />
         {/* Purchase Transaction */}
+
+        {/* Transactions */}
+        <Transaction />
+        {/* Transactions */}
       </ScrollView>
     </HomeLayout>
   );

@@ -9,6 +9,7 @@ import TodayRevenue from './Cards/TodayRevenue';
 import DashboardSecond from './Cards/DashboardSecond';
 import SalesTransaction from './Cards/SalesTransaction';
 import PurchaseTransactions from './Cards/PurchaseTransactions';
+import Transaction from './Cards/Transaction';
 
 export {
   DotLoader,
@@ -17,4 +18,5 @@ export {
   DashboardSecond,
   SalesTransaction,
   PurchaseTransactions,
+  Transaction,
 };
