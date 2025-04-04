@@ -123,7 +123,7 @@ const Customer = () => {
         </ScrollView>
         <BottomSheet
           snapPoints={snapPoints}
-          index={1}
+          index={-1}
           ref={bottomSheetRef}
           enablePanDownToClose
           enableContentPanningGesture
@@ -148,9 +148,8 @@ const Customer = () => {
                 paddingHorizontal: 20,
               }}>
               {filterOptions.map((item, index) => (
-                <View>
+                <View key={index}>
                   <TouchableOpacity
-                    key={index}
                     style={styles.sheetContentContainer}
                     onPress={() => setSelectedFilter(index)}>
                     <View style={styles.sheetContentLeftContainer}>
