@@ -107,8 +107,10 @@ const Home = () => {
                     style={styles.btnContainer}
                     key={index}
                     onPress={() => {
-                      setSelectedRangeIndex(prev => index);
-                      handleClose();
+                      if (index !== selectedRangeIndex) {
+                        setSelectedRangeIndex(prev => index);
+                        handleClose();
+                      }
                     }}>
                     <View style={styles.btnSubContainer}>
                       <Text style={styles.btnText}>{item}</Text>
