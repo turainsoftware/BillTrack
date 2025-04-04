@@ -2,16 +2,24 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {colors, fonts} from '../../util/utils';
+import {useNavigation} from '@react-navigation/native';
 
-const SecondaryHeader = () => {
+const SecondaryHeader = ({title}) => {
+  const navigation = useNavigation();
+  const handleBack = () => {
+    if (navigation.canGoBack()) {
+      navigation.goBack();
+    }
+  };
   return (
     <View style={styles.container}>
       <View style={styles.leftContainer}>
         <TouchableOpacity
+          onPress={handleBack}
           style={{justifyContent: 'center', alignItems: 'center'}}>
           <MaterialIcons name="arrow-back" size={25} color="#000000" />
         </TouchableOpacity>
-        <Text style={styles.titleText}>Customer List</Text>
+        <Text style={styles.titleText}>{title}</Text>
       </View>
       <TouchableOpacity
         style={{justifyContent: 'center', alignItems: 'center'}}>

@@ -6,7 +6,7 @@ import {SecondaryHeader} from '../../components';
 const Customer = () => {
   return (
     <HomeLayout>
-      <SecondaryHeader />
+      <SecondaryHeader title={'Customer List'} />
     </HomeLayout>
   );
 };
