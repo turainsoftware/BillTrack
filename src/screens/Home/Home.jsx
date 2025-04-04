@@ -90,7 +90,7 @@ const Home = () => {
         <BottomSheet
           ref={bottomSheetRef}
           snapPoints={snapPoints}
-          index={1}
+          index={-1}
           enablePanDownToClose
           enableContentPanningGesture
           backdropComponent={renderBackdrop}
