@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useMemo, useRef} from 'react';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
 import HomeLayout from './HomeLayout';
 import {
   DashboardSecond,
@@ -27,6 +27,7 @@ const Home = () => {
   const snapPoints = ['60%'];
 
   const handleOpen = () => bottomSheetRef.current?.expand();
+  const handleClose = () => bottomSheetRef.current?.close();
   // Bottom Sheet Backdrop
   const renderBackdrop = props => (
     <BottomSheetBackdrop
@@ -46,6 +47,8 @@ const Home = () => {
     'Last quarter',
     'This year',
   ];
+
+  const [selectedRangeIndex, setSelectedRangeIndex] = useState(0);
 
   return (
     <HomeLayout>
@@ -99,11 +102,28 @@ const Home = () => {
             <View style={styles.selectableItems}>
               {dateRanges.map((item, index) => {
                 return (
-                  <TouchableOpacity style={styles.btnContainer} key={index}>
-                    <Text>{item}</Text>
-                    <View style={styles.radioBtn}>
-                      <View />
+                  <TouchableOpacity
+                    style={styles.btnContainer}
+                    key={index}
+                    onPress={() => {
+                      setSelectedRangeIndex(prev => index);
+                      handleClose();
+                    }}>
+                    <View style={styles.btnSubContainer}>
+                      <Text style={styles.btnText}>{item}</Text>
+                      <View
+                        style={[
+                          styles.radioBtn,
+                          index === selectedRangeIndex && {
+                            borderColor: colors.primary,
+                          },
+                        ]}>
+                        {index === selectedRangeIndex && (
+                          <View style={styles.innerRadioBtn} />
+                        )}
+                      </View>
                     </View>
+                    <View style={styles.divider}></View>
                   </TouchableOpacity>
                 );
               })}
@@ -140,6 +160,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   btnContainer: {
+    // flexDirection: 'row',
+    // justifyContent: 'space-between',
+  },
+  btnSubContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -150,6 +174,30 @@ const styles = StyleSheet.create({
     borderColor: '#C3C3C3',
     borderRadius: 16 / 2,
     backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  innerRadioBtn: {
+    width: 10,
+    height: 10,
+    backgroundColor: colors.primary,
+    borderRadius: 10 / 2,
+  },
+  btnText: {
+    fontSize: 13,
+    fontFamily: fonts.medium,
+    color: colors.textSlate,
+  },
+  dottedContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  divider: {
+    // height: 2,
+    borderWidth: 0.4,
+    borderColor: '#DCDCDC',
+    borderStyle: 'dashed',
+    marginVertical: 7,
   },
 });
 
