@@ -45,7 +45,7 @@ const App = () => {
   const AppStack = () => {
     return (
       <Tab.Navigator
-        initialRouteName="Home"
+        initialRouteName="Customer"
         screenOptions={{
           animation: 'shift',
           headerShown: false,

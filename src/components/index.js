@@ -3,6 +3,7 @@ import DotLoader from './Loaders/DotLoader';
 
 //Headers
 import PrimaryHeader from './Headers/PrimaryHeader';
+import SecondaryHeader from './Headers/SecondaryHeader';
 
 // Cards
 import TodayRevenue from './Cards/TodayRevenue';
@@ -19,4 +20,5 @@ export {
   SalesTransaction,
   PurchaseTransactions,
   Transaction,
+  SecondaryHeader,
 };

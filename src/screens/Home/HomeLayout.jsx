@@ -4,7 +4,6 @@ import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
 import React from 'react';
@@ -22,7 +21,7 @@ const HomeLayout = ({children}) => {
       }}>
       <StatusBar
         barStyle={'dark-content'}
-        backgroundColor="transparent"
+        backgroundColor="#ffffff"
         translucent={true}
       />
       {children}
