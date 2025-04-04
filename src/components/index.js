@@ -11,6 +11,7 @@ import DashboardSecond from './Cards/DashboardSecond';
 import SalesTransaction from './Cards/SalesTransaction';
 import PurchaseTransactions from './Cards/PurchaseTransactions';
 import Transaction from './Cards/Transaction';
+import CustomerCard from './Cards/CustomerCard';
 
 export {
   DotLoader,
@@ -21,4 +22,5 @@ export {
   PurchaseTransactions,
   Transaction,
   SecondaryHeader,
+  CustomerCard
 };

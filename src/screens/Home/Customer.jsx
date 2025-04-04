@@ -1,4 +1,5 @@
 import {
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -7,7 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import HomeLayout from './HomeLayout';
-import {SecondaryHeader} from '../../components';
+import {CustomerCard, SecondaryHeader} from '../../components';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {colors, fonts} from '../../util/utils';
@@ -29,6 +30,16 @@ const Customer = () => {
           <FontAwesome6 name="sliders" size={20} color="#ffffff" />
         </TouchableOpacity>
       </View>
+      <ScrollView
+        style={{flex: 1, paddingHorizontal: 20, paddingVertical: 10}}
+        contentContainerStyle={{gap: 10}}
+        showsVerticalScrollIndicator={false}>
+        <CustomerCard />
+        <CustomerCard />
+        <CustomerCard />
+        <CustomerCard />
+        <CustomerCard />
+      </ScrollView>
     </HomeLayout>
   );
 };
