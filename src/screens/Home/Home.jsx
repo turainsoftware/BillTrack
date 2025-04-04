@@ -96,7 +96,8 @@ const Home = () => {
           backdropComponent={renderBackdrop}
           animationConfigs={{
             duration: 400,
-          }}>
+          }}
+          backgroundStyle={{backgroundColor: colors.primaryBackground}}>
           <BottomSheetView style={styles.bottomSheetContent}>
             <Text style={styles.title}>Select Date Range</Text>
             <View style={styles.selectableItems}>
@@ -123,7 +124,9 @@ const Home = () => {
                         )}
                       </View>
                     </View>
-                    <View style={styles.divider}></View>
+                    {dateRanges.length - 1 !== index && (
+                      <View style={styles.divider} />
+                    )}
                   </TouchableOpacity>
                 );
               })}
@@ -194,10 +197,10 @@ const styles = StyleSheet.create({
   },
   divider: {
     // height: 2,
-    borderWidth: 0.4,
+    borderTopWidth: 1,
     borderColor: '#DCDCDC',
     borderStyle: 'dashed',
-    marginVertical: 7,
+    marginVertical: 8,
   },
 });
 
